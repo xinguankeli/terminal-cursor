@@ -15,7 +15,7 @@ MyCursor::MyCursor(QWidget *parent) : QWidget(parent),m_changeSign(false)
     setAttribute(Qt::WA_TranslucentBackground, true);
     m_animation = new QPropertyAnimation(this, "pos");
     m_animation->setDuration(50);
-    m_animation->setEasingCurve(QEasingCurve::InOutQuad);
+    m_animation->setEasingCurve(QEasingCurve::OutCubic);
     connect(m_animation, &QPropertyAnimation::finished, this, [&]{
         m_timer->start();
     });
